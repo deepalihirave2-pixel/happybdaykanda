@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sanjuu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+  
+  body { 
+    background: #ffeef2;
+    background-image: 
+      linear-gradient(#ffd6e0 1px, transparent 1px), 
+      linear-gradient(90deg, #ffd6e0 1px, transparent 1px);
+    background-size: 30px 30px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .page { 
+    display: none; 
+    background: #fff;
+    padding: 35px 25px; 
+    border-radius: 25px; 
+    text-align: center; 
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(255,143,171,0.3);
+    border: 3px solid #ffc2d1;
+    animation: pop 0.6s ease-out;
+  }
+  .page.active { display: block; }
+
+  #password-page { background: #ffffff; }
+  #password-page h2 { font-size: 1.1rem; color: #d63384; margin-bottom: 20px; font-weight: 600; }
+  #password-page input { 
+    padding: 12px; width: 100%; border: 2px solid #ffc2d1; border-radius: 10px; margin-bottom: 15px; outline: none;
+    font-size: 1rem;
+  }
+  #password-page button {
+    background: #ff8fab; color: white; border: none; padding: 12px 0; width: 100%; border-radius: 10px; cursor: pointer;
+    font-size: 1rem; font-weight: 600;
+  }
+
+  .pic-box {
+    width: 220px; height: 220px; border-radius: 15px; overflow: hidden; margin: 0 auto 20px;
+    border: 3px solid #ffc2d1;
+    animation: zoomIn 1s ease-out;
+  }
+  .pic-box img, .pic-box video { width: 100%; height: 100%; object-fit: cover; }
+
+  /* NEW: POLAROID GALLERY */
+  .polaroid-wrap {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .polaroid {
+    background: white;
+    padding: 8px 8px 25px 8px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: rotate(-5deg);
+    width: 120px;
+    height: 150px;
+  }
+  .polaroid:nth-child(2) { transform: rotate(4deg); }
+  .polaroid:nth-child(3) { transform: rotate(-3deg); }
+  .polaroid img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+
+  h1 { 
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem; color: #d63384; margin: 10px 0; font-weight: 700; 
+  }
+  p { color: #555; font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
+  
+  .btn {
+    background: #ff8fab; color: white; border: none; padding: 12px 25px; 
+    border-radius: 25px; font-size: 1rem; cursor: pointer; font-weight: 600;
+    transition: 0.2s;
+    box-shadow: 0 4px 0 #e66a8a;
+  }
+  .btn:active { transform: translateY(3px); box-shadow: 0 0 0 #e66a8a; }
+  .btn-alt { background: #ccc; box-shadow: 0 4px 0 #aaa; }
+  .btn-group { display: flex; gap: 10px; justify-content: center; }
+
+  @keyframes pop { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+  @keyframes zoomIn { from { opacity: 0; transform: scale(1.2); } to { opacity: 1; transform: scale(1); } }
+</style>
+</head>
+<body>
+
+<!-- 1. PASSWORD -->
+<div id="password-page" class="page active">
+  <h2>Enter the password to view</h2>
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="checkPass()">Continue</button>
+</div>
+
+<!-- 2. HEY -->
+<div id="page1" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/736x/bd/10/03/bd1003e31dd6b90a88ec0987d0fc0e43.jpg" alt="puppy"></div>
+  <h1>HEY!!</h1>
+  <p style="font-family:'Dancing Script',cursive; font-size:1.2rem;">I made something for you<br>Do you want to see?</p>
+  <div class="btn-group">
+    <button class="btn" onclick="showPage('page2')">Yes</button>
+    <button class="btn btn-alt" onclick="showPage('page-no')">No</button>
+  </div>
+</div>
+
+<!-- 3. NO -->
+<div id="page-no" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/736x/f8/55/40/f855407848953ce066e559c336dd5cf5.jpg" alt="angry puppy"></div>
+  <h1>HOW DARE YOU 😠</h1>
+  <button class="btn" onclick="showPage('page1')">Go back</button>
+</div>
+
+<!-- 4. GOOD GIRL -->
+<div id="page2" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/736x/5a/2e/57/5a2e57e3304642a5d62460bd515269b8.jpg" alt="happy puppy"></div>
+  <h1>That's a good Gurrlll 🌻</h1>
+  <button class="btn" onclick="showPage('page3')">Click</button>
+</div>
+
+<!-- 5. HAPPY BIRTHDAY -->
+<div id="page3" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/736x/75/0a/4a/750a4a2a2ed11edc2007db826eac109b.jpg" alt="birthday puppy"></div>
+  <h1>HAPPY BIRTHDAY BBG ❤️</h1>
+  <p>You are my favorite notification<br><b>STAY CUTE, STAY HAPPY, STAY MINE</b></p>
+  <button class="btn" onclick="showPage('page4')">Next</button>
+</div>
+
+<!-- 6. LETTER -->
+<div id="page4" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/1200x/c8/1a/6e/c81a6e414db163c0d68d6f90e35083eb.jpg" alt="letter"></div>
+  <p style="cursor:pointer; text-decoration:underline; font-weight:600; font-family:'Dancing Script',cursive; font-size:1.3rem;" onclick="showPage('page5')">Tap here to open</p>
+</div>
+
+<!-- 7. MESSAGE -->
+<div id="page5" class="page">
+  <p><b>You are seen, you are heard, and you are loved no matter what.</b><br><br>
+  <b>If you ever feel unloved, remember that my love for you is boundless and endless 💌</b><br><br>
+Happy Birthday! 🎉
+No matter how far life has taken us or how much things have changed, I'll always be grateful for the memories we shared. We may be separated now, but I truly hope this year brings you happiness, good health, success, and peace. You deserve all the best.
+Have a wonderful birthday and a beautiful year ahead. Take care and stay happy. ❤️</p>
+  <button class="btn" onclick="showPage('page6')">Next</button>
+</div>
+
+<!-- 8. I LOVE YOU WITH YOUR PHOTOS -->
+<div id="page6" class="page">
+  <h1>I LOVE YOU ❤️</h1>
+  <p>You don't know how much you mean to me</p>
+  
+  <div class="polaroid-wrap">
+    <div class="polaroid"><img src="images/gubbi.jpeg" alt="pic 1"></div>
+    <div class="polaroid"><img src="images/gubbi2.png" alt="pic 2"></div>
+    <div class="polaroid"><img src="images/gubbi3.png" alt="pic 3"></div>
+  </div>
+
+  <button class="btn" onclick="showPage('page7')">Click here</button>
+</div>
+<!-- 9. SURPRISE -->
+<div id="page7" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/1200x/86/a8/4b/86a84bb057c589e7dfb03c70c6da01b4.jpg" alt="gift"></div>
+  <h1>Here's a surprise for you!!!</h1>
+  <button class="btn" onclick="showPage('page8')">Tap here</button>
+</div>
+
+<!-- 10. HUG -->
+<div id="page8" class="page">
+  <h1>Here is virtual hug for you 🤗</h1>
+  <div class="pic-box"><img src="https://i.pinimg.com/736x/f9/3a/c3/f93ac3bc0a9176c9388b0830ba507e28.jpg" alt="hug"></div>
+  <button class="btn" onclick="showPage('page9')">Next</button>
+</div>
+
+<!-- 11. WISH 1: CAKE -->
+<div id="page9" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/1200x/71/d7/a5/71d7a5a31e30974e5d6c98fcc6ce6cf3.jpg" alt="cake"></div>
+  <h1>May all your wishes come true ✨</h1>
+  <button class="btn" onclick="showPage('page10')">Next</button>
+</div>
+
+<!-- 12. WISH 2: BALLOONS -->
+<div id="page10" class="page">
+  <div class="pic-box"><img src="https://i.pinimg.com/1200x/fa/fd/ad/fafdad2386f62516ee6778f9c4d3a8f8.jpg" alt="balloons"></div>
+  <h1>Wishing you endless happiness 🎈</h1>
+  <button class="btn" onclick="showPage('page11')">Next</button>
+</div>
+
+<!-- 13. FINAL PAGE -->
+<div id="page11" class="page">
+  <h1>Love you to the moon & back 🌙</h1>
+  <div class="pic-box">
+    <img src="https://www.shutterstock.com/shutterstock/photos/2120855054/display_1500/stock-vector-best-friend-forever-bear-design-2120855054.jpg" alt="bff">
+  </div>
+  <p>Forever yours ❤️</p>
+</div>
+
+<script>
+  function checkPass() {
+    let pass = document.getElementById('pass').value;
+    if(pass.toLowerCase() === "sanjuu") {
+      showPage('page1');
+    } else {
+      alert("Wrong password! Hint: sanjuu");
+    }
+  }
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
